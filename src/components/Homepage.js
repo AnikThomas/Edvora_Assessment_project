@@ -50,7 +50,7 @@ function Homepage () {
     }
     console.log(groupBy(products, 'product_name'));
     let processedProducts = products;
-    // processedProducts = processedProducts.filter(product => product.address.city = city)
+   
     if (productFilter != null && productFilter !== '') {
         processedProducts = processedProducts.filter(product => product.product_name === productFilter)
     }
@@ -61,7 +61,7 @@ function Homepage () {
         processedProducts = processedProducts.filter(product => product.address.city === cityFilter)
     }
     
-    // processedProducts = processedProducts.filter(product => product.address.city = city)
+    
     let groups = groupBy(processedProducts, 'product_name');
     return(
     
