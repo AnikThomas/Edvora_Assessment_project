@@ -59,6 +59,4 @@ function FilterPage () {
     )
 }
 
-
-
 export default FilterPage;

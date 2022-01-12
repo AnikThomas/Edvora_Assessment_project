@@ -95,7 +95,7 @@ function Homepage () {
                             )        
                         })}
                     </Carousel>
-                </div>
+                </div>         
             ) 
         })}
         </div>
