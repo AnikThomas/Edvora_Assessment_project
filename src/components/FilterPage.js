@@ -25,6 +25,7 @@ function FilterPage () {
                 })}
                 </Dropdown.Menu>
             </Dropdown>
+
             <Dropdown className="mb-2">
                 <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark" style={{width:"125px"}}>State</Dropdown.Toggle>
                 <Dropdown.Menu variant="dark" style={{ margin: 0 }}>
@@ -39,6 +40,7 @@ function FilterPage () {
                 })}
                 </Dropdown.Menu>
             </Dropdown>
+
             <Dropdown>
                 <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark" style={{width:"125px"}}>City</Dropdown.Toggle>
                 <Dropdown.Menu variant="dark" style={{ margin: 0 }}>
