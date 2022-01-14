@@ -7,3 +7,8 @@ body{
     flex-direction: column;
     margin: 0;
 }
+
+.FilterContainer{
+    min-width: 100vh;
+    min-height: 100vh;
+}

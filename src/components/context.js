@@ -6,7 +6,7 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
     const [ products, setProducts] = useState([])
 
-
+    
 //I need useEffect so the fetch will not run on repeat
     useEffect(() => {
         console.log('fetching');
@@ -23,6 +23,7 @@ const AppProvider = ({ children }) => {
     return(
         <AppContext.Provider value={{
             products
+         
         }}>
             { children }
         </AppContext.Provider>
