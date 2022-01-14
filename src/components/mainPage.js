@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { AppContext } from "./context";
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Card, CardImg, Container, Row, Col } from 'reactstrap';
 import {Dropdown } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
@@ -96,70 +96,71 @@ function MainPage() {
     let groups = groupBy(productLists, 'product_name');
     return (
       <div className="App">
-        <Container className="bg-dark FilterContainer">
+        <Container className="bg-dark Filter">
           <Row>
-            <Col className="mt-5" >
-            <Container className="p-4 mr-3 square rounded-top" style={{backgroundColor:'black', width:"50%"}}>
-            <h6 className="text-muted">Filters</h6><hr className="bg-light"/>
+            <Col className="filter-container" >
+              <Container className="mr-4 filter-box" style={{width:"50%"}}>
+              <h6 className="text-muted">Filters</h6><hr className="bg-light"/>
 
-            {/* Dropdown Products start */}
-            <Dropdown>
-            <DropdownButton className="mb-2" variant="dark" title="Products" onSelect={UpdateProductNameFilter} style={{ width:'150px'}}>
-            
-            { productNames.map( (productName, index) => {
-                    if(productNames.indexOf(productName) === index) {
-                        return (
-                            <Dropdown.Item eventKey={productName} key={index} style={{ margin: 0 }}>{productName}</Dropdown.Item>
-                        );
-                    } else {
-                        return (<div key={index}></div>)
-                    }
-                })}
-            </DropdownButton>
-            </Dropdown>
+              {/* Dropdown Products start */}
+              <Dropdown>
+                <DropdownButton className="mb-2 dropdown" variant="dark" title="Products" onSelect={UpdateProductNameFilter} style={{margin: 0}}>
+                
+                { productNames.map( (productName, index) => {
+                        if(productNames.indexOf(productName) === index) {
+                            return (
+                                <Dropdown.Item eventKey={productName} key={index} style={{margin: 0}}>{productName}</Dropdown.Item>
+                            );
+                        } else {
+                            return (<div key={index}></div>)
+                        }
+                    })}
+                </DropdownButton>
+              </Dropdown>
 
-            {/* Dropdown Products end */}
+              {/* Dropdown Products end */}
 
-                 {/* Dropdown State start */}
-            <Dropdown>
-            <DropdownButton className="mb-2" variant="dark" title="State" onSelect={UpdateStateNameFilter} style={{margin: 0  }}>
-            
-            { productState.map( (productName, index) => {
-                    if(productState.indexOf(productName) === index) {
-                        return (
-                            <Dropdown.Item eventKey={productName} key={index} style={{ margin: 0 }}>{productName}</Dropdown.Item>
-                        );
-                    } else {
-                        return (<div key={index}></div>)
-                    }
-                })}
-            </DropdownButton>
-            </Dropdown>
-            {/* Dropdown State end */}
+                  {/* Dropdown State start */}
+              <Dropdown>
+                <DropdownButton className="mb-2 dropdown" variant="dark" title="State" onSelect={UpdateStateNameFilter} style={{margin: 0}}>
+                
+                { productState.map( (productName, index) => {
+                        if(productState.indexOf(productName) === index) {
+                            return (
+                                <Dropdown.Item eventKey={productName} key={index} style={{margin: 0}}>{productName}</Dropdown.Item>
+                            );
+                        } else {
+                            return (<div key={index}></div>)
+                        }
+                    })}
+                </DropdownButton>
+              </Dropdown>
+              {/* Dropdown State end */}
 
-            
-             {/* Dropdown City start */}
-             <Dropdown>
-              <DropdownButton className="mb-2" variant="dark" title="City" onSelect={UpdateCityNameFilter}>
               
-              { productCity.map( (productName, index) => {
-                      if(productCity.indexOf(productName) === index) {
-                          return (
-                              <Dropdown.Item eventKey={productName} key={index} style={{ margin: 0 }}>{productName}</Dropdown.Item>
-                          );
-                      } else {
-                          return (<div key={index}></div>)
-                      }
-                  })}
-              </DropdownButton>
-            </Dropdown>
+              {/* Dropdown City start */}
+              <Dropdown>
+                  <DropdownButton className="mb-2 dropdown" variant="dark" title="City" onSelect={UpdateCityNameFilter} style={{margin: 0}}>
+                  
+                  { productCity.map( (productName, index) => {
+                          if(productCity.indexOf(productName) === index) {
+                              return (
+                                  <Dropdown.Item eventKey={productName} key={index} style={{margin: 0}}>{productName}</Dropdown.Item>
+                              );
+                          } else {
+                              return (<div key={index}></div>)
+                          }
+                      })}
+                  </DropdownButton>
+              </Dropdown>
 
-            {/* Dropdown City end */}
-        </Container>
+              {/* Dropdown City end */}
+              </Container>
             </Col>
+
             <Col style={{"minWidth": "70vh"}}>
             <div className="bg-dark"> <h1 className="text-light p-4 mb-0">Edvora</h1>
-            <h2 className="text-muted p-4 mb-0">Products</h2>
+            <h2 className="text-muted p-4">Products</h2>
         {Object.keys (groups).map((groupName, index) => {
             
             return(
@@ -169,18 +170,18 @@ function MainPage() {
                         {groups[groupName].map((product, index)=>{
                             return(
                                 <div key={index}>
-                                    <Container className="mt-2 ml-3 p-3" style={{backgroundColor:'black'}}>
-                                        <Card className="p-3" style={{ width: '80', height: '80',backgroundColor: 'rgb(35,35,35', color:'white' }}>
+                                    <Container className="card-container mt-2 ml-3 p-3">
+                                        <Card className="card p-3" style={{ backgroundColor: 'rgb(35,35,35)', color:'white' }}>
                                             <Row>
                                                 <Col>
-                                                    <CardImg className="p-2 square bg-dark rounded-top" top width="150%" height="75%" src={product.image} alt={product.product_name} />
+                                                    <CardImg className="p-2 square bg-dark rounded-top" src={product.image} alt={product.product_name} />
                                                 </Col>
                                                 <Col>
                                                     <p className="product-brand">{product.product_name}</p>
                                                     <p>${product.price}</p>
                                                 </Col>
                                             </Row>
-                                                <p className="small text-muted mt-2">{product.address.city} {product.address.state}  {product.date}</p>
+                                                <p className="small text-muted mt-2">{product.address.city} {product.address.state} {product.date}</p>
                                                 <p className="small">{product.discription}</p>
                                         </Card>
                                     </Container>
