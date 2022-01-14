@@ -10,7 +10,6 @@ function App() {
         <Route path='/product/:productFilter' element={<MainPage/>}/>
         <Route path='/state/:stateFilter' element={<MainPage />}/>
         <Route path='/city/:cityFilter' element={<MainPage/>}/>
-        
     </Routes>
   );
 }

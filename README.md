@@ -1,3 +1,6 @@
+# This project is a demo project created for a job opportunity
+# It uses an API to get products and sort them by product_name, these products can also be filter via the filter.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

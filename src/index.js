@@ -5,11 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from './components/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
-
-
 ReactDOM.render(
   <React.StrictMode>
     <AppProvider>
